@@ -8,7 +8,7 @@ if (storage.isEmpty) {
   let index = 0;
   const intervalId = setInterval(() => {
     dumpdata[index].id = Date.now();
-    dumpdata[index].isComplete = Math.random() >= 0.4;
+    dumpdata[index].isComplete = Math.random() >= 0.5;
 
     index++;
     if (index === dumpdata.length) {
