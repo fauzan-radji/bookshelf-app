@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/colors.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">bookshelf-app</h1>
+        <button id="add-btn" class="btn">
+          <img
+            src="icons/add-book-50.png"
+            alt="add-book"
+            class="icon icon--invert"
+          />
+          Tambah Buku
+        </button>
+      </header>
+
+      <section>
+        <input
+          id="filterBookTitle"
+          class="filter-input"
+          type="text"
+          placeholder="Filter berdasarkan judul, penulis atau tahun ..."
+        />
+      </section>
+
+      <main class="shelves-wrapper">
+        <section class="shelf incomplete-bookshelf">
+          <h2 class="title">Belum selesai dibaca</h2>
+
+          <ul id="incompleteBookshelfList" class="book-list"></ul>
+        </section>
+
+        <section class="shelf complete-bookshelf">
+          <h2 class="title">Selesai dibaca</h2>
+          <ul id="completeBookshelfList" class="book-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <div id="add-modal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <label for="inputBookTitle">Judul</label>
+            <input id="inputBookTitle" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor">Penulis</label>
+            <input id="inputBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear">Tahun</label>
+            <input id="inputBookYear" type="number" required />
+          </div>
+          <div class="input-inline">
+            <input id="inputBookIsComplete" type="checkbox" />
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+          </div>
+          <div class="button-wrapper">
+            <button id="bookSubmit" class="btn" type="submit">
+              Tambah Buku
+            </button>
+            <button class="btn secondary" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Edit Buku</h2>
+        <form id="editBookForm">
+          <input type="hidden" id="editBookId" />
+          <div class="input">
+            <label for="editBookTitle">Judul</label>
+            <input id="editBookTitle" type="text" required />
+          </div>
+          <div class="input">
+            <label for="editBookAuthor">Penulis</label>
+            <input id="editBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="editBookYear">Tahun</label>
+            <input id="editBookYear" type="number" required />
+          </div>
+          <div class="button-wrapper">
+            <button class="btn" type="submit">Simpan Perubahan</button>
+            <button class="btn secondary" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="popup-modal" class="modal">
+      <div class="modal-content">
+        <h4 id="popupText" class="text-center"></h4>
+        <form id="popupForm">
+          <div class="button-wrapper">
+            <button class="btn" type="submit">Yakin</button>
+            <button class="btn danger" type="reset">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/modal.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/event-listeners.js"></script>
+    <script src="js/dumpdata.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
